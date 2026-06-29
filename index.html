@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>橙子的成长足迹 - 记录她的每一个瞬间</title>
+
+    <!-- 1. 基础样式 (必须最先加载) -->
+    <link rel="stylesheet" href="css/base.css">
+
+    <!-- 2. 组件/模块样式 (顺序无关紧要) -->
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/features.css">
+
+    <!-- 3. 响应式样式 (必须最后加载，以覆盖默认样式) -->
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- 首屏照片墙区 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hello, World ! 迎来一只胖橙子</h1>
+            <p>专为父母打造的极简成长记录空间。用温馨的照片墙和智能里程碑，轻松记录宝贝的闪耀瞬间，让回忆触手可及。</p>
+            <div class="cta-group">
+                <a href="#" class="btn btn-primary">免费开始记录</a>
+                <a href="#" class="btn btn-secondary">查看演示相册</a>
+            </div>
+        </div>
+        <!-- 动态照片墙容器 -->
+        <div class="hero-image photo-wall">
+            <!-- 1. 首屏关键图：立即加载，高优先级，锁定尺寸防抖动 -->
+            <picture class="wall-photo-wrapper">
+                <source srcset="images/照片墙主图.webp" type="image/webp">
+                <img src="images/照片墙主图.jpg" alt="宝贝成长瞬间1"
+                     class="wall-photo"
+                     width="400" height="300"
+                     fetchpriority="high" decoding="async">
+            </picture>
+
+            <!-- 2. 第二张图：原生懒加载，接近视口时才加载 -->
+            <picture class="wall-photo-wrapper">
+                <source srcset="images/照片墙2.webp" type="image/webp">
+                <img src="images/照片墙2.jpg" alt="宝贝成长瞬间2"
+                     class="wall-photo"
+                     width="400" height="300"
+                     loading="lazy" decoding="async">
+            </picture>
+
+            <!-- 3. 第三张图：原生懒加载 -->
+            <picture class="wall-photo-wrapper">
+                <source srcset="images/照片墙3.webp" type="image/webp">
+                <img src="images/照片墙3.jpg" alt="宝贝成长瞬间3"
+                     class="wall-photo"
+                     width="400" height="300"
+                     loading="lazy" decoding="async">
+            </picture>
+        </div>
+    </section>
+
+
+    <!-- 功能区 -->
+    <section class="features">
+        <div class="features-grid">
+            <article class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>成长里程碑</h3>
+                <p>成长中的很多很多第一次</p>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>成长数据</h3>
+                <p>身高体重曲线</p>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>艺术相册</h3>
+                <p>那些拍过的艺术照</p>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">📅</div>
+                <h3>家庭大事记</h3>
+                <p>橙子的那些快乐的纪事</p>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">✍️</div>
+                <h3>父母日志</h3>
+                <p>在喧嚣中留一片自留地，写下育儿感悟与心情，给未来的自己和孩子一封信。</p>
+            </article>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+/* =========================================
+   4. 响应式断点适配 (集中管理)
+   ========================================= */
+
+/* 移动端单手操作优化 (375px - 480px) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 16px;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    /* 按钮在移动端全宽，方便拇指点击 */
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .cta-group {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+/* 平板端 (768px+) */
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        text-align: left;
+        padding: 100px 40px;
+        gap: 60px;
+    }
+    .hero-content {
+        flex: 1;
+    }
+    .hero-image {
+        flex: 1;
+        max-width: 500px;
+    }
+    .cta-group {
+        justify-content: flex-start;
+    }
+    .features {
+        padding: 60px 40px 100px;
+    }
+}
+
+/* 桌面端 (1440px+) */
+@media (min-width: 1440px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    .hero p {
+        font-size: 1.25rem;
+    }
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr); /* 桌面端固定3列 */
+    }
+}
