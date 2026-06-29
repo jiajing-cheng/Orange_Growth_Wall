@@ -1,52 +1,69 @@
 /* =========================================
-   3. 功能区 (Features Grid)
+   功能区 (Features)
    ========================================= */
+
+/* 功能区整体布局 */
 .features {
-    padding: 40px 20px 80px;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* 使用 CSS Grid 实现响应式网格 */
 .features-grid {
-    display: grid;
-    /* 响应式核心：自动填充，最小280px，最大1fr */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+  display: grid;
+  /* 核心响应式代码：自动填充，每个卡片最小260px，最大1fr（均分） */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
 }
 
+/* 让链接填满整个网格单元，并移除默认样式 */
+.feature-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit; /* 继承父级颜色 */
+}
+
+/* 卡片基础样式 */
 .feature-card {
-    background: var(--color-card-bg);
-    padding: 32px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid #F4F4F5;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  background: var(--color-card-bg, #fff);
+  padding: 32px 24px;
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid #f0f0f0;
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.1));
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%; /* 确保卡片高度一致 */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.feature-card:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-4px);
+/* 卡片悬停效果 */
+.feature-card-link:hover .feature-card {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg, 0 10px 25px rgba(0,0,0,0.1));
+  border-color: var(--color-primary, #635BFF);
 }
 
+/* 图标样式 */
 .feature-icon {
-    width: 48px;
-    height: 48px;
-    background-color: #F0FDFA;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 16px;
 }
 
+/* 标题样式 */
 .feature-card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-text, #333);
 }
 
+/* 描述样式 */
 .feature-card p {
-    color: var(--color-subtext);
-    font-size: 0.95rem;
+  font-size: 0.95rem;
+  color: var(--color-subtext, #666);
+  line-height: 1.5;
 }

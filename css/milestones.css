@@ -1,0 +1,117 @@
+/* =========================================
+   成长里程碑页面 (Milestones)
+   ========================================= */
+
+/* 页面头部样式 */
+.page-header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
+    border-bottom: 1px solid #eee;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.back-to-home {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #635BFF;
+    color: white;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.back-to-home:hover {
+    background-color: #5048d6;
+}
+
+/* 里程碑容器，使用 Grid 布局 */
+.milestones-container {
+    display: grid;
+    /* 核心响应式代码：自动填充，每个项目最小300px，最大1fr（均分） */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* 单个里程碑项目 */
+.milestone-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.milestone-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* 媒体内容（图片或视频容器） */
+.milestone-item img,
+.milestone-item .video-wrapper {
+    width: 100%;
+    height: 250px; /* 固定高度，保持网格整齐 */
+    object-fit: cover; /* 保证图片/视频填充且不变形 */
+}
+
+/* 视频响应式包装器 */
+.video-wrapper {
+    position: relative;
+    background: #f0f0f0; /* 添加一个浅灰色背景作为兜底 */
+}
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 里程碑信息区域 */
+.milestone-info {
+    padding: 20px;
+    flex-grow: 1; /* 让信息区域填满剩余空间 */
+    display: flex;
+    flex-direction: column;
+}
+
+.milestone-info h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.milestone-info time {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.milestone-info p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-top: auto; /* 将段落推到容器底部 */
+}
